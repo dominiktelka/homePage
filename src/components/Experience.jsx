@@ -126,18 +126,79 @@ export const Experience = () => {
                     </Float>
                 </group>
             </group>
-            <group position={[-2.5,1.5,-5*CURVE_DISTANCE]}>
-                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={0.22} maxWidtk={2.5}>
+            <group position={[0.1*CURVE_DISTANCE,0.2*CURVE_DISTANCE,0.5*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
+                <Text color="smokeWhite" anchorX="right" anchorY="middle" fontSize={7} maxWidtk={2.5}>
                     Hi! I'm Dominik Telka!{"\n"}
-                    Frontend Developer {"\n"}
-                    Who loves to play with 3D
+                    Beginning the Odyssey:{"\n"}
+                    I started my JavaScript journey over two years ago,{"\n"}
+                    Eager to conquer the ecosystem.
                 </Text>
             </group>
-            <group position={[-10,0,-30]} rotation={[0, 1, 0]}>
-                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={0.22} maxWidtk={2.5}>
-                    I started my journey{"\n"}
-                    2 years ago{"\n"}
-                    From this time i learned a lot!
+            <group position={[-1.8*CURVE_DISTANCE,0.1*CURVE_DISTANCE,-0.8*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Building Strong Foundations:{"\n"}
+                    I mastered JavaScript basics,{"\n"}
+                    Laying the groundwork for advanced learning.
+                </Text>
+            </group>
+            <group position={[-0.05*CURVE_DISTANCE,-0.55*CURVE_DISTANCE,-2.6*CURVE_DISTANCE]} rotation={[0, 0.1, 0]}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Front-End Finesse:{"\n"}
+                    I immersed myself in front-end development,{"\n"}
+                    Excelling in React.js and{"\n"}
+                    Creating captivating interfaces.
+                </Text>
+            </group>
+            <group position={[1.92*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-4.3*CURVE_DISTANCE]} rotation={[0, -0.4, 0]}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Exploring the 3D Realm:{"\n"}
+                    Venturing into Three.js and Theatre.js,{"\n"}
+                    I explored 3D graphics,{"\n"}
+                    Pushing web development boundaries.
+                </Text>
+            </group>
+            <group position={[0.36*CURVE_DISTANCE,-0.15*CURVE_DISTANCE,-6.3*CURVE_DISTANCE]} rotation={[0, 0.3, 0]}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Back-End Brilliance:{"\n"}
+                    Excelling in Express.js and Node.js,{"\n"}
+                    I mastered databases like MongoDB and{"\n"}
+                    MySQL for a robust back-end.
+                </Text>
+            </group>
+            <group position={[-0.30*CURVE_DISTANCE,0.25*CURVE_DISTANCE,-7.3*CURVE_DISTANCE]} rotation={[0, -0.6, 0]}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={4} maxWidtk={2.5}>
+                    Tech Stack Mastery:{"\n"}
+                    I polished CSS3, HTML5 skills and{"\n"}
+                    Used Git and Jira for{"\n"}
+                    Version control and project management.
+                </Text>
+            </group>
+            <group position={[3.2*CURVE_DISTANCE,0.7*CURVE_DISTANCE,-8*CURVE_DISTANCE]} rotation={[0.1, -0.6, 0]} scale={2}>
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Versatile CMS Skills:{"\n"}
+                    Beyond coding, I worked with{"\n"}
+                    CMS platforms like Drupal, AEM, and Hybris,{"\n"}
+                    Delivering comprehensive web solutions.
+                </Text>
+            </group>
+            <group position={[-0.1*CURVE_DISTANCE,0.9*CURVE_DISTANCE,-9.4*CURVE_DISTANCE]} rotation={[0.01, 1.1, 0]} >
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+                    Skills & Qualities Unveiled:{"\n"}
+                    Throughout this journey, my commitment, attention to detail,{"\n"}
+                    Rapid learning, teamwork, independence, and strong interpersonal skills{"\n"}
+                    Have complemented my technical expertise,{"\n"}
+                    Making me a well-rounded candidate ready to excel in any development team.
+                </Text>
+            </group>
+            <group position={[1.8*CURVE_DISTANCE,0.1*CURVE_DISTANCE,-10*CURVE_DISTANCE]} rotation={[0.05, -0.8, 0]} >
+                <Text color="whiteSmoke" anchorX="right" anchorY="middle" fontSize={5} maxWidtk={2.5}>
+
+                    Passions Beyond Code:{"\n"}
+                    Alongside my skills,{"\n"}
+                    I'm passionate about Star Wars, {"\n"}
+                    Outdoor adventures, globetrotting, and cycling,{"\n"}
+                    Adding a dynamic dimension to my personality,{"\n"}
+                    Making me a well-rounded and enjoyable team member.
                 </Text>
             </group>
             <group position={[0,-2,0]}>

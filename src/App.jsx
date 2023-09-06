@@ -1,6 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import { Experience } from "./components/Experience";
 import {ScrollControls} from "@react-three/drei";
+import {Overlay} from "./components/Overlay.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
               <Experience />
           </ScrollControls>
       </Canvas>
+        {/*<Overlay/>*/}
     </>
   );
 }
