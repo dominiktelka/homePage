@@ -7,7 +7,7 @@ body {
   margin: 0;
 }
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 2px;
 }
 
 /* TRACK */
@@ -26,24 +26,13 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  background-color: black;
 }
 
 .overlay--disable {
   pointer-events: none;
-}
-
-.loader {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: white;
-  transition: opacity 2s ease-in-out;
-}
-
-.loader--disappear {
-  opacity: 0;
+  background-color: transparent;
+  transition: background-color 2.5s;
 }
 
 .intro {
@@ -57,7 +46,7 @@ body {
 .logo {
   font-family: "DM Serif Display", serif;
   color: white;
-  font-size: 8rem;
+  font-size: 6rem;
   letter-spacing: 0.5rem;
   padding: 0;
   margin: 0;
@@ -66,6 +55,7 @@ body {
   top: 50vh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
+  text-align: center;
 }
 
 .intro--disappear .logo {
@@ -74,25 +64,8 @@ body {
   transform-origin: center top;
 }
 
-.spinner {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  margin-right: -42px;
-  margin-top: -42px;
-  animation: fadeIn 2.4s ease-in-out 1.2s forwards;
-  opacity: 0;
-}
 
-.spinner__image {
-  width: 164px;
-  height: 164px;
-  background-size: contain;
-  background-image: url("./images/tadpole.svg");
-  animation: rotate 10s linear infinite;
-}
-
-.intro--disappear .spinner {
+.intro--disappear {
   opacity: 1;
   animation: fadeOut 1s ease-in-out forwards;
 }
@@ -172,6 +145,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 4s ease-in-out;
+  background-color: black;
 }
 
 .outro--appear {
@@ -220,4 +194,13 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.iconsContainer {
+  width: 80vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  pointer-events: all;
 }
