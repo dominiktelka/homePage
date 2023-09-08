@@ -29,15 +29,15 @@ export const Overlay = () => {
                     </button>
                 </div>
             )}
-            <div className={`outro ${end ? "outro--appear" : ""}`}>
+            <div className={`outro ${end ? "outro--appear" : ""}`} >
                 <p className="outro__text">Wish you had a great fun with me...</p>
-                <div className="iconsContainer">
-                    <img src={'./icons/instagram.png'}
-                         onClick={() => window.location.href = "https://www.instagram.com/dentek9/"}/>
-                    <img src={'./icons/linkedin.png'}
-                         onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
-                    <img src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'}/>
-                </div>
+            </div>
+            <div className={`iconsContainer ${end ? "iconsContainer--appear" : ""}`} style={{ pointerEvents: end ? 'all' : 'none' }} >
+                <img src={'./icons/instagram.png'}
+                     onClick={() => window.location.href = "https://www.instagram.com/dentek9/"}/>
+                <img src={'./icons/linkedin.png'}
+                     onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
+                <img src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'}/>
             </div>
         </div>
     );

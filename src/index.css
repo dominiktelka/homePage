@@ -197,10 +197,18 @@ body {
 }
 
 .iconsContainer {
+  position: absolute;
+  top: 55svh;
+  left: 50svw;
+  transform: translate(-50%);
   width: 80vw;
   height: 50px;
   display: flex;
   justify-content: space-evenly;
   padding: 15px;
-  pointer-events: all;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+}
+.iconsContainer--appear {
+  opacity: 1;
 }

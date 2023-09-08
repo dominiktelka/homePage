@@ -1,14 +1,14 @@
 import {Float, PerspectiveCamera, useScroll, Text, OrbitControls} from "@react-three/drei";
 import {Background} from "./Background.jsx";
 import {Xwing} from "./Xwing.jsx";
-import React, { useMemo, useRef} from "react";
+import React, {useLayoutEffect, useMemo, useRef} from "react";
 import * as THREE from "three"
 import {useFrame} from "@react-three/fiber";
 import {Galaxy} from "./Galaxy.jsx";
 import {Group} from "three";
 import { fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
 import {usePlay} from "../contexts/Play.jsx";
-
+import {gsap} from "gsap";
 
 
 const LINE_NB_POINTS = 1000
@@ -19,11 +19,10 @@ const XWING_MAX_ANGLE = 35;
 
 export const Experience = () => {
 
-     const sceneOpacity = useRef(0);
 
     const curve = useMemo(()=>{
         return  new THREE.CatmullRomCurve3([
-                new THREE.Vector3(3*CURVE_DISTANCE,0,CURVE_DISTANCE),
+                new THREE.Vector3(3*CURVE_DISTANCE,0, CURVE_DISTANCE),
                 new THREE.Vector3(-0.5*CURVE_DISTANCE,0,-0.15 *CURVE_DISTANCE),
                 new THREE.Vector3(-0.2*CURVE_DISTANCE,-0.4*CURVE_DISTANCE,-2*CURVE_DISTANCE),
                 new THREE.Vector3(0.6*CURVE_DISTANCE,-0.3*CURVE_DISTANCE,-3.3*CURVE_DISTANCE),
@@ -32,8 +31,9 @@ export const Experience = () => {
                 new THREE.Vector3(-1.4*CURVE_DISTANCE,0.3*CURVE_DISTANCE,-6.5*CURVE_DISTANCE),
                 new THREE.Vector3(1.1*CURVE_DISTANCE,-0.4*CURVE_DISTANCE,-6.5*CURVE_DISTANCE),
                 new THREE.Vector3(1.1*CURVE_DISTANCE,0.4*CURVE_DISTANCE,-8*CURVE_DISTANCE),
-                new THREE.Vector3(-0.1*CURVE_DISTANCE,0.75*CURVE_DISTANCE,-9*CURVE_DISTANCE),
-                new THREE.Vector3(1.4*CURVE_DISTANCE,-0.1*CURVE_DISTANCE,-10*CURVE_DISTANCE),
+                new THREE.Vector3(-0.1*CURVE_DISTANCE,0.7*CURVE_DISTANCE,-9*CURVE_DISTANCE),
+                new THREE.Vector3(1.2*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.9*CURVE_DISTANCE),
+
             ],
             false,
             "catmullrom",
@@ -56,19 +56,22 @@ export const Experience = () => {
             setHasScroll(true);
         }
 
-        const scrollOffset = Math.max(0, scroll.offset);
+        const scrollOffset = Math.max(0, scroll.offset-0.01);
 
         const curPoint = curve.getPoint(scrollOffset);
-        // console.log(curPoint)
+
 
         // Follow the curve points
         cameraGroup.current.position.lerp(curPoint, delta * 24);
+        // console.log(curPoint)
+
 
         // Make the group look ahead on the curve
 
         const lookAtPoint = curve.getPoint(
             Math.min(scrollOffset + CURVE_AHEAD_CAMERA, 1)
         );
+
 
         const currentLookAt = cameraGroup.current.getWorldDirection(
             new THREE.Vector3()
@@ -78,6 +81,7 @@ export const Experience = () => {
             .normalize();
 
         const lookAt = currentLookAt.lerp(targetLookAt, delta * 24);
+
         cameraGroup.current.lookAt(
             cameraGroup.current.position.clone().add(lookAt)
         );
@@ -101,6 +105,7 @@ export const Experience = () => {
         let angleDegrees = (angle * 180) / Math.PI;
         angleDegrees *= 2.4; // stronger angle
 
+
         // LIMIT XWING ANGLE
         if (angleDegrees < 0) {
             angleDegrees = Math.max(angleDegrees, -XWING_MAX_ANGLE);
@@ -120,12 +125,35 @@ export const Experience = () => {
             )
         );
         xWing.current.quaternion.slerp(targetXwingQuaternion, delta * 2)
-        if(cameraGroup.current.position.z < -1480 ){
+
+
+        if(cameraGroup.current.position.z < -1474 ){
             setEnd(true)
+            planeOutTl.current.play();
         }
     });
-
+    const planeOutTl = useRef();
     const xWing = useRef()
+
+    useLayoutEffect(() => {
+
+        planeOutTl.current = gsap.timeline();
+        planeOutTl.current.pause();
+
+        planeOutTl.current.to(
+            xWing.current.position,
+            {
+                duration: 4.5,
+                z: -250,
+                y: 10,
+            },
+            0
+        );
+        planeOutTl.current.to(xWing.current.position, {
+            duration: 1,
+            z: -2000,
+        });
+    }, []);
 
     return useMemo(()=>(
         <>
@@ -137,6 +165,7 @@ export const Experience = () => {
                     <Float floatIntensity={0.5} speed={1.5} rotationIntensity={0.1}>
                         <Xwing rotation-y={Math.PI/-2} scale={1} position={[0,-1,0]}/>
                     </Float>
+
                 </group>
             </group>
             <group position={[2.1*CURVE_DISTANCE,0.02*CURVE_DISTANCE,0.74*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
@@ -211,7 +240,7 @@ export const Experience = () => {
                     <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
                 </Text>
             </group>
-            <group position={[1.2*CURVE_DISTANCE,0.05*CURVE_DISTANCE,-9.8*CURVE_DISTANCE]} rotation={[0.05, -0.95, 0]} >
+            <group position={[0.55*CURVE_DISTANCE,0.4*CURVE_DISTANCE,-9.4*CURVE_DISTANCE]} rotation={[0.02, -1, 0]} >
                 <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
 
                     Passions Beyond Code:{"\n"}
