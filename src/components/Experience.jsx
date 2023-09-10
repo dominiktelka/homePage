@@ -1,4 +1,4 @@
-import {Float, PerspectiveCamera, useScroll, OrbitControls, PositionalAudio} from "@react-three/drei";
+import {Float, PerspectiveCamera, useScroll, OrbitControls, PositionalAudio, Stars} from "@react-three/drei";
 import {Background} from "./Background.jsx";
 import {Xwing} from "./Xwing.jsx";
 import React, {useEffect, useLayoutEffect, useMemo, useRef} from "react";
@@ -9,6 +9,7 @@ import {Group} from "three";
 import {TextSpace} from "./Text.jsx";
 import {usePlay} from "../contexts/Play.jsx";
 import {gsap} from "gsap";
+import {Speed} from "./Speed.jsx";
 
 
 const LINE_NB_POINTS = 1000
@@ -186,6 +187,8 @@ export const Experience = () => {
     return useMemo(()=>(
         <>
             <group ref={cameraGroup}>
+                {/*<OrbitControls/>*/}
+                <Speed/>
                 <Background/>
                 <PerspectiveCamera ref={cameraRef} position={[0,0,10]} fov={50} makeDefault={true}/>
                 <group ref={xWing}>

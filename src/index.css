@@ -222,6 +222,7 @@ body {
   padding: 15px;
   opacity: 0;
   transition: opacity 4s ease-in-out;
+  cursor: pointer;
 }
 .iconsContainer--appear {
   opacity: 1;
@@ -235,6 +236,7 @@ body {
   border: none;
   background: transparent;
   scale: 2;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
