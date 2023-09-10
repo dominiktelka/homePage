@@ -1,4 +1,4 @@
-import {Float, PerspectiveCamera, useScroll, Text, OrbitControls, PositionalAudio} from "@react-three/drei";
+import {Float, PerspectiveCamera, useScroll, OrbitControls, PositionalAudio} from "@react-three/drei";
 import {Background} from "./Background.jsx";
 import {Xwing} from "./Xwing.jsx";
 import React, {useEffect, useLayoutEffect, useMemo, useRef} from "react";
@@ -6,7 +6,7 @@ import * as THREE from "three"
 import {useFrame} from "@react-three/fiber";
 import {Galaxy} from "./Galaxy.jsx";
 import {Group} from "three";
-import { fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
+import {TextSpace} from "./Text.jsx";
 import {usePlay} from "../contexts/Play.jsx";
 import {gsap} from "gsap";
 
@@ -48,15 +48,25 @@ export const Experience = () => {
     }, [curve]);
 
     const cameraGroup = useRef();
+    const cameraRef = useRef()
     const scroll = useScroll();
     const { setHasScroll, setEnd}= usePlay();
 
     useFrame((_state, delta) => {
+
+        if(window.innerWidth > window.innerHeight){
+            cameraRef.current.fov = 30;
+            cameraRef.current.position.z = 10
+        }else{
+            cameraRef.current.position.z = 5;
+            cameraRef.current.fov = 80;
+        }
+
         if(scroll.offset > 0){
             setHasScroll(true);
         }
 
-        const scrollOffset = Math.max(0, scroll.offset-0.01);
+        const scrollOffset = Math.max(0, scroll.offset-0.005);
 
         const curPoint = curve.getPoint(scrollOffset);
 
@@ -129,18 +139,26 @@ export const Experience = () => {
 
         if(cameraGroup.current.position.z < -1474 ){
             setEnd(true)
-            planeOutTl.current.play();
+            xWingOutTl.current.play();
         }
     });
-    const planeOutTl = useRef();
+    const xWingOutTl = useRef();
     const xWing = useRef()
+    const xWingInTl = useRef()
 
     useLayoutEffect(() => {
+        xWingInTl.current = gsap.timeline();
+        xWingInTl.current.pause();
+        xWingInTl.current.from(xWing.current.position, {
+            duration: 3,
+            z: 20,
+            y: -2,
+        });
 
-        planeOutTl.current = gsap.timeline();
-        planeOutTl.current.pause();
+        xWingOutTl.current = gsap.timeline();
+        xWingOutTl.current.pause();
 
-        planeOutTl.current.to(
+        xWingOutTl.current.to(
             xWing.current.position,
             {
                 duration: 4.5,
@@ -149,7 +167,7 @@ export const Experience = () => {
             },
             0
         );
-        planeOutTl.current.to(xWing.current.position, {
+        xWingOutTl.current.to(xWing.current.position, {
             duration: 1,
             z: -2000,
         });
@@ -161,15 +179,15 @@ export const Experience = () => {
         if (play) {
             const audio = document.getElementById("background-music");
             audio.play();
+            xWingInTl.current.play();
         }
     }, [play]);
 
     return useMemo(()=>(
         <>
-            {/*<OrbitControls />*/}
             <group ref={cameraGroup}>
                 <Background/>
-                <PerspectiveCamera position={[0,0,10]} fov={50} makeDefault={true}/>
+                <PerspectiveCamera ref={cameraRef} position={[0,0,10]} fov={50} makeDefault={true}/>
                 <group ref={xWing}>
                     <Float floatIntensity={0.5} speed={1.5} rotationIntensity={0.1}>
                         <Xwing rotation-y={Math.PI/-2} scale={1} position={[0,-1,0]}/>
@@ -177,90 +195,7 @@ export const Experience = () => {
 
                 </group>
             </group>
-            <group position={[2.1*CURVE_DISTANCE,0.02*CURVE_DISTANCE,0.74*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Beginning the Odyssey:{"\n"}
-                    I started my JavaScript journey{"\n"}
-                    Over two years ago,{"\n"}
-                    Eager to conquer the ecosystem.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[-0.55*CURVE_DISTANCE,-0.01*CURVE_DISTANCE,-0.4*CURVE_DISTANCE]} rotation={[0, 0.8, 0]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Building Strong Foundations:{"\n"}
-                    I mastered JavaScript basics,{"\n"}
-                    Laying the groundwork for advanced learning.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[-0.08*CURVE_DISTANCE,-0.423*CURVE_DISTANCE,-2.3*CURVE_DISTANCE]} rotation={[0, -0.3, 0]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Front-End Finesse:{"\n"}
-                    I immersed myself in front-end development,{"\n"}
-                    Excelling in React.js and{"\n"}
-                    Creating captivating interfaces.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[0.72*CURVE_DISTANCE,-0.08*CURVE_DISTANCE,-3.87*CURVE_DISTANCE]} rotation={[0.4, 0.1, -0.1]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Exploring the 3D Realm:{"\n"}
-                    Venturing into Three.js and Theatre.js,{"\n"}
-                    I explored 3D graphics,{"\n"}
-                    Pushing web development boundaries.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[0.18*CURVE_DISTANCE,-0.218*CURVE_DISTANCE,-4.68*CURVE_DISTANCE]} rotation={[0, 0.9, 0]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Back-End Brilliance:{"\n"}
-                    Excelling in Express.js and Node.js,{"\n"}
-                    I mastered databases like MongoDB and{"\n"}
-                    MySQL for a robust back-end.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[-0.58*CURVE_DISTANCE,0.05*CURVE_DISTANCE,-6.55*CURVE_DISTANCE]} rotation={[0.03, -1.5, 0]}>
-                <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Tech Stack Mastery:{"\n"}
-                    I polished CSS3, HTML5 skills and{"\n"}
-                    Used Git and Jira for{"\n"}
-                    Version control and project management.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[1.38*CURVE_DISTANCE,0.02*CURVE_DISTANCE,-7.3*CURVE_DISTANCE]} rotation={[0.6, 0.2, -0.088]} >
-                <Text anchorX="right" anchorY="middle" fontSize={0.6} maxWidtk={2.5}>
-                    Versatile CMS Skills:{"\n"}
-                    Beyond coding, I worked with{"\n"}
-                    CMS platforms like Drupal, AEM, and Hybris,{"\n"}
-                    Delivering comprehensive web solutions.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[-0.1*CURVE_DISTANCE,0.8*CURVE_DISTANCE,-8.9*CURVE_DISTANCE]} rotation={[0.01, 1.1, 0.02]} >
-                <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-                    Skills & Qualities Unveiled:{"\n"}
-                    Throughout this journey, my commitment, attention to detail,{"\n"}
-                    Rapid learning, teamwork, independence, and strong interpersonal skills{"\n"}
-                    Have complemented my technical expertise,{"\n"}
-                    Making me a well-rounded candidate ready to excel in any development team.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
-            <group position={[0.55*CURVE_DISTANCE,0.4*CURVE_DISTANCE,-9.4*CURVE_DISTANCE]} rotation={[0.02, -1, 0]} >
-                <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5}>
-
-                    Passions Beyond Code:{"\n"}
-                    Alongside my skills,{"\n"}
-                    I'm passionate about Star Wars, {"\n"}
-                    Outdoor adventures, globetrotting, and cycling,{"\n"}
-                    Adding a dynamic dimension to my personality,{"\n"}
-                    Making me a well-rounded and enjoyable team member.
-                    <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
-                </Text>
-            </group>
+            <TextSpace CURVE_DISTANCE={CURVE_DISTANCE}/>
             <group position={[0,-2,0]}>
                 <mesh>
                     <extrudeGeometry
