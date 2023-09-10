@@ -1,7 +1,7 @@
-import {Float, PerspectiveCamera, useScroll, Text, OrbitControls} from "@react-three/drei";
+import {Float, PerspectiveCamera, useScroll, Text, OrbitControls, PositionalAudio} from "@react-three/drei";
 import {Background} from "./Background.jsx";
 import {Xwing} from "./Xwing.jsx";
-import React, {useLayoutEffect, useMemo, useRef} from "react";
+import React, {useEffect, useLayoutEffect, useMemo, useRef} from "react";
 import * as THREE from "three"
 import {useFrame} from "@react-three/fiber";
 import {Galaxy} from "./Galaxy.jsx";
@@ -155,6 +155,15 @@ export const Experience = () => {
         });
     }, []);
 
+    const { play} = usePlay();
+
+    useEffect(() => {
+        if (play) {
+            const audio = document.getElementById("background-music");
+            audio.play();
+        }
+    }, [play]);
+
     return useMemo(()=>(
         <>
             {/*<OrbitControls />*/}
@@ -272,3 +281,4 @@ export const Experience = () => {
     ),[]
     );
 };
+

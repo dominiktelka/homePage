@@ -27,6 +27,12 @@ export const Overlay = () => {
                     >
                         Explore
                     </button>
+                    <audio
+                        id="background-music"
+                        src="./music/Galactic-CCC_1.mp3"
+                        loop
+                        style={{ display: "none" }}
+                    ></audio>
                 </div>
             )}
             <div className={`outro ${end ? "outro--appear" : ""}`} >
