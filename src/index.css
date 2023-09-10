@@ -85,17 +85,20 @@ body {
 }
 
 .intro__scroll {
-  opacity: 0;
+  opacity: 1;
   color: white;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   letter-spacing: 0.05rem;
   position: absolute;
   top: 24vh;
+  left: 50svw;
+  transform: translate(-50%);
 }
 
 .intro--disappear .intro__scroll {
-  animation: fadeIn 1s ease-in-out 1.5s forwards;
+  animation: fadeIn 1s ease-in-out 1.5s forwards ;
+
 }
 
 .overlay--scrolled .intro__scroll {

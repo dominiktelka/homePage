@@ -52,7 +52,7 @@ export const Speed = () => {
   const lastScroll = useRef(0);
 
   useFrame((_state, delta) => {
-    if (scroll.offset - lastScroll.current > 0.0005) {
+    if (scroll.offset - lastScroll.current > 0.0001) {
       speedMaterial.current.opacity = MAX_OPACITY;
     }
     lastScroll.current = scroll.offset;

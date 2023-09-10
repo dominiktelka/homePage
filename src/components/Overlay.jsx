@@ -8,8 +8,6 @@ export const Overlay = () => {
     const { play, setPlay, hasScroll, end} = usePlay();
     const audioRef = useRef(null);
 
-
-//@todo try to take scrolldown from iphone and implement it in app.jsx, BEST OPTION TO GET GOOD EXEPRIENCE ON MOBILE IS TO CHANGE FOV TO 50 MAYBE, ON LAPTOP LOOKS ALSO GOOD
     return (
         <div className={`overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""}`}>
             <div
@@ -21,7 +19,6 @@ export const Overlay = () => {
                         Hi! I'm Dominik Telka!👋
                     </h1>
                     <h2 className="logo2">Future Frontend Developer</h2>
-                    <p className="intro__scroll">Scroll to begin the journey</p>
                     <button
                         className="explore"
                         onClick={() => {
@@ -44,6 +41,7 @@ export const Overlay = () => {
 
                     ></audio>
                     <MusicControls audioRef={audioRef}/>
+                    <p className="intro__scroll">Scroll to begin the journey</p>
                 </>
                 )
             }
@@ -51,8 +49,6 @@ export const Overlay = () => {
                 <p className="outro__text">Wish you had a great fun with me...</p>
             </div>
             <div className={`iconsContainer ${end ? "iconsContainer--appear" : ""}`} style={{ pointerEvents: end ? 'all' : 'none' }} >
-                <img src={'./icons/instagram.png'}
-                     onClick={() => window.location.href = "https://www.instagram.com/dentek9/"}/>
                 <img src={'./icons/linkedin.png'}
                      onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
                 <img src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'}/>

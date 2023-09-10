@@ -51,6 +51,7 @@ export const Experience = () => {
     const cameraGroup = useRef();
     const cameraRef = useRef()
     const scroll = useScroll();
+    const lastScroll = useRef(0)
     const { setHasScroll, setEnd}= usePlay();
 
     useFrame((_state, delta) => {
@@ -63,7 +64,7 @@ export const Experience = () => {
             cameraRef.current.fov = 80;
         }
 
-        if(scroll.offset > 0){
+        if(lastScroll.current <=0 &&scroll.offset > 0){
             setHasScroll(true);
         }
 

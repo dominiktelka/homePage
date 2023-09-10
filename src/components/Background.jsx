@@ -18,6 +18,6 @@ export const Background = () =>{
 
             </LayerMaterial>
         </Sphere>
-        <Stars radius={50} depth={100} count={5000} factor={6} saturation={0} fade speed={1} />
+        <Stars radius={50} depth={100} count={5000} factor={2} saturation={0} fade speed={1} />
     </>
 }
