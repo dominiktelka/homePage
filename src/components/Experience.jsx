@@ -53,6 +53,7 @@ export const Experience = () => {
     const scroll = useScroll();
     const lastScroll = useRef(0)
     const { setHasScroll, setEnd}= usePlay();
+    const cameraRail = useRef()
 
     useFrame((_state, delta) => {
 
@@ -191,7 +192,9 @@ export const Experience = () => {
                 {/*<OrbitControls/>*/}
                 <Speed/>
                 <Background/>
-                <PerspectiveCamera ref={cameraRef} position={[0,0,10]} fov={50} makeDefault={true}/>
+                <group ref={cameraRail}>
+                    <PerspectiveCamera ref={cameraRef} position={[0,0,10]} fov={50} makeDefault={true}/>
+                </group>
                 <group ref={xWing}>
                     <Float floatIntensity={0.5} speed={1.5} rotationIntensity={0.1}>
                         <Xwing rotation-y={Math.PI/-2} scale={1} position={[0,-1,0]}/>

@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Jedi';
+  src: url("../public/Distant-Galaxy/DISTGRG_.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
 #root {
   width: 100svw;
   height: 100svh;
@@ -44,8 +50,7 @@ body {
 }
 
 .logo {
-  font-family: "DM Serif Display", serif;
-  color: white;
+  font-family: "Jedi", serif;
   font-size: 4rem;
   letter-spacing: 0.5rem;
   padding: 0;
@@ -56,10 +61,11 @@ body {
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
   text-align: center;
+  color: yellow;
 }
 .logo2 {
-  font-family: "DM Serif Display", serif;
-  color: white;
+  font-family: "Jedi", serif;
+  color: yellow;
   font-size: 4rem;
   letter-spacing: 0.5rem;
   padding: 0;
@@ -86,8 +92,8 @@ body {
 
 .intro__scroll {
   opacity: 1;
-  color: white;
-  font-family: "Inter", sans-serif;
+  color: yellow;
+  font-family:"Jedi", sans-serif;
   font-size: 1rem;
   letter-spacing: 0.05rem;
   position: absolute;
@@ -142,10 +148,20 @@ body {
   animation: fadeOut 1s ease-in-out forwards;
 }
 .info{
-  color: whitesmoke;
+  color: yellow;
   font-size: 1.5rem;
   margin-top:1.5svh;
   pointer-events: none;
+  opacity: 0.8;
+  font-family: "Jedi",sans-serif;
+}
+.info2{
+  color: yellow;
+  font-size: 1.5rem;
+  margin-top:1.5svh;
+  pointer-events: none;
+  opacity: 0.8;
+  font-family: "Jedi",sans-serif;
 }
 
 .explore {
@@ -154,7 +170,7 @@ body {
   font-family: "DM Serif Display", serif;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
-  color: #3535cc;
+  color: black;
   border-radius: 32px;
   cursor: pointer;
   display: inline-block;
@@ -167,10 +183,6 @@ body {
   opacity: 0;
 }
 
-.explore:hover {
-  color: white;
-}
-
 .explore:hover:before {
   width: 200%;
   height: 300%;
@@ -179,7 +191,7 @@ body {
 
 .explore:before {
   content: "";
-  background: #3535cc;
+  background: yellow;
   position: absolute;
   width: 0;
   bottom: 0;
@@ -214,12 +226,36 @@ body {
 
 .outro__text {
   position: absolute;
-  top:20svh;
-  left: 50%;
-  transform: translate(-50%);
-  font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
-  color: white;
+  font-family: "Jedi",sans-serif;
+  font-size: 1.2rem;
+  color: yellow;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.outro__text:nth-child(1){
+  top:0;
+}
+.outro__text:nth-child(2){
+  top:8svh;
+}
+.outro__text:nth-child(3){
+  top:16svh;
+}
+.outro__text:nth-child(4){
+  top:24svh;
+}
+.outro__text:nth-child(5){
+  top:32svh;
+}
+.outro__text:nth-child(6){
+  top:40svh;
+}
+.outro__text:nth-child(7){
+  top:48svh;
+}
+.outro__text:nth-child(8){
+  top:58svh;
 }
 @keyframes fadeUp {
   0% {
@@ -262,7 +298,7 @@ body {
 
 .iconsContainer {
   position: absolute;
-  top: 55svh;
+  top: 80svh;
   left: 50svw;
   transform: translate(-50%);
   width: 80vw;
@@ -308,28 +344,35 @@ body {
   }
   .intro__scroll{
     font-size: 0.8rem;
+    width: 80svw;
+    text-align: center;
   }
-.iconsContainer{
-  display: flex;
-  width: 20svw;
-  height: 50svh;
-  top: 30%;
-  left: 50%;
-  flex-direction: column; /* Ustawienie układu kolumnowego */
-}
+
 .info{
-  font-size: 1.2rem;
+  font-size: 1rem;
   width: 40svw;
-  transform: translateX(-10svw);
   text-align: center;
+  transform: translateX(-6svw);
 }
+  .info2{
+    font-size: 0.8rem;
+    width: 40svw;
+    text-align: center;
+    transform: translate(1svh,-1svw);
+  }
 
   .outro__text {
-    font-size: 1rem;
-    width: 70svw;
+    font-size: 0.8rem;
+    width: 95svw;
     text-align: center;
   }
   .explore{
     bottom: -15svh;
+  }
+  .img{
+    transform: translateX(-2svh);
+  }
+  .img2{
+    transform: translateX(2svh);
   }
 }
