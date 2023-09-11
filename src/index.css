@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Jedi';
-  src: url("../public/Distant-Galaxy/DISTGRG_.ttf");
+  src: url("./Distant-Galaxy/DISTGRG_.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -167,7 +167,7 @@ body {
 .explore {
   padding: 1rem 2rem;
   border: none;
-  font-family: "DM Serif Display", serif;
+  font-family: "Jedi", serif;
   font-size: 1.25rem;
   letter-spacing: 0.25rem;
   color: black;
