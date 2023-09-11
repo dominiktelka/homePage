@@ -98,7 +98,7 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
 
 
     const textMobile = <>
-        <group position={[2.1*CURVE_DISTANCE,0.02*CURVE_DISTANCE,0.74*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
+        <group position={[1.1*CURVE_DISTANCE,0.03*CURVE_DISTANCE,0.48*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
             <Text anchorX="right" anchorY="middle" fontSize={0.3} maxWidtk={2.5} textAlign={"center"} font={("../public/Distant-Galaxy/DISTGRG_.ttf")}>
                 Beginning the Odyssey:{"\n"}
                 I started my JavaScript journey{"\n"}
