@@ -5,6 +5,7 @@ import React from "react";
 
 import {fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
 
+
 export const TextSpace = ({CURVE_DISTANCE}) => {
 
     const textNormal = <>
@@ -174,7 +175,7 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
             </Text>
         </group>
         <group position={[0.46*CURVE_DISTANCE,0.39*CURVE_DISTANCE,-9.47*CURVE_DISTANCE]} rotation={[0.02, -1, 0.015]} >
-            <Text  anchorX="right" anchorY="middle" fontSize={0.23} maxWidtk={2.5} textAlign={"center"} font={"../../public/Distant-Galaxy/DISTGRG_.ttf"}>
+            <Text  anchorX="right" anchorY="middle" fontSize={0.23} maxWidtk={2.5} textAlign={"center"} font={"../public/Distant-Galaxy/DISTGRG_.ttf"}>
 
                 Passions Beyond Code:{"\n"}
                 Alongside my skills,{"\n"}
