@@ -42,6 +42,7 @@ export const Overlay = () => {
                     ></audio>
                     <MusicControls audioRef={audioRef}/>
                     <p className="intro__scroll">Scroll to begin the journey</p>
+                    <div className="intro__mouse"></div>
                 </>
                 )
             }
@@ -49,9 +50,10 @@ export const Overlay = () => {
                 <p className="outro__text">Wish you had a great fun with me...</p>
             </div>
             <div className={`iconsContainer ${end ? "iconsContainer--appear" : ""}`} style={{ pointerEvents: end ? 'all' : 'none' }} >
-                <img src={'./icons/linkedin.png'}
-                     onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
-                <img src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'}/>
+                <p className="info">Contact me 📨 </p>
+                <img className="img" src={'./icons/linkedin.png'} onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
+                <p className="info">Check Github for more projects 💻 </p>
+                <img className="img" src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'}/>
             </div>
         </div>
     );

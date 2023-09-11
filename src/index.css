@@ -91,18 +91,61 @@ body {
   font-size: 1rem;
   letter-spacing: 0.05rem;
   position: absolute;
-  top: 24vh;
+  top: 9vh;
   left: 50svw;
   transform: translate(-50%);
 }
 
-.intro--disappear .intro__scroll {
-  animation: fadeIn 1s ease-in-out 1.5s forwards ;
+.intro__mouse {
+  width: 30px;
+  height: 70px;
+  border: 3px solid #333;
+  border-radius: 60px;
+  position: absolute;
+  top: 15svh;
+  left: 50svw;
+  transform: translate(-50%);
+  background-color: whitesmoke;
+}
+.intro__mouse::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+  }
 
+@keyframes wheel {
+  to {
+    opacity: 0;
+    top: 60px;
+  }
 }
 
-.overlay--scrolled .intro__scroll {
+.intro--disappear .intro__scroll {
+  animation: fadeIn 1s ease-in-out 1.5s forwards ;
+}
+
+.overlay--scrolled .intro__scroll  {
   animation: fadeOut 1s ease-in-out forwards;
+}
+.overlay--scrolled .intro__mouse{
+  animation: fadeIn 1s ease-in-out 1.5s forwards ;
+}
+.overlay--scrolled .intro__mouse  {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+.info{
+  color: whitesmoke;
+  font-size: 1.5rem;
+  margin-top:1.5svh;
+  pointer-events: none;
 }
 
 .explore {
@@ -138,10 +181,10 @@ body {
   content: "";
   background: #3535cc;
   position: absolute;
-  width: 0%;
+  width: 0;
   bottom: 0;
   left: 50%;
-  height: 0%;
+  height: 0;
   transition: 0.42s ease-in-out;
   z-index: -1;
   transform: translateX(-50%) translateY(50%);
@@ -170,6 +213,10 @@ body {
 }
 
 .outro__text {
+  position: absolute;
+  top:20svh;
+  left: 50%;
+  transform: translate(-50%);
   font-family: "Inter", sans-serif;
   font-size: 1.5rem;
   color: white;
@@ -225,6 +272,8 @@ body {
   padding: 15px;
   opacity: 0;
   transition: opacity 4s ease-in-out;
+}
+.iconsContainer .img{
   cursor: pointer;
 }
 .iconsContainer--appear {
@@ -257,9 +306,28 @@ body {
     transform: scale(0.5);
     transform-origin: center top;
   }
+  .intro__scroll{
+    font-size: 0.8rem;
+  }
+.iconsContainer{
+  display: flex;
+  width: 20svw;
+  height: 50svh;
+  top: 30%;
+  left: 50%;
+  flex-direction: column; /* Ustawienie układu kolumnowego */
+}
+.info{
+  font-size: 1.2rem;
+  width: 40svw;
+  transform: translateX(-10svw);
+  text-align: center;
+}
 
   .outro__text {
     font-size: 1rem;
+    width: 70svw;
+    text-align: center;
   }
   .explore{
     bottom: -15svh;
