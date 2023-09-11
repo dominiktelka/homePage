@@ -1,6 +1,6 @@
 #root {
-  width: 100vw;
-  height: 100vh;
+  width: 100svw;
+  height: 100svh;
 }
 
 body {
@@ -40,7 +40,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: 100svh;
 }
 
 .logo {
@@ -52,7 +52,7 @@ body {
   margin: 0;
   transform: translateY(-50%);
   position: absolute;
-  top: 35vh;
+  top: 35svh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
   text-align: center;
@@ -66,7 +66,7 @@ body {
   margin: 0;
   transform: translateY(-50%);
   position: absolute;
-  top: 55vh;
+  top: 55svh;
   animation: fadeUp 2.4s ease-in-out;
   transition: all 2s ease-in-out;
   text-align: center;
@@ -91,7 +91,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.05rem;
   position: absolute;
-  top: 9vh;
+  top: 9svh;
   left: 50svw;
   transform: translate(-50%);
 }
