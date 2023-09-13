@@ -141,12 +141,7 @@ export const Experience = () => {
         );
         xWing.current.quaternion.slerp(targetXwingQuaternion, delta * 2)
 
-
-        if(cameraGroup.current.position.z < -1470 ){
-            xWingOutTl.current.play();
-        }
     });
-
     const xWingOutTl = useRef();
     const xWing = useRef()
     const xWingInTl = useRef()
@@ -174,7 +169,7 @@ export const Experience = () => {
         );
         xWingOutTl.current.to(xWing.current.position, {
             duration: 1,
-            z: -2000,
+            z: -3000,
         });
     }, []);
 
@@ -206,7 +201,7 @@ export const Experience = () => {
 
                 </group>
             </group>
-            <TextSpace CURVE_DISTANCE={CURVE_DISTANCE}/>
+            <TextSpace CURVE_DISTANCE={CURVE_DISTANCE} xWing={xWingOutTl}/>
             <ImageSpace CURVE_DISTANCE={CURVE_DISTANCE}/>
             <group position={[0,-2,0]}>
                 <mesh>

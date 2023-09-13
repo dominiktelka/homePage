@@ -7,10 +7,11 @@ import {fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
 import {usePlay} from "../contexts/Play.jsx";
 
 
-export const TextSpace = ({CURVE_DISTANCE}) => {
+export const TextSpace = ({CURVE_DISTANCE, xWing}) => {
     const { setEnd} = usePlay();
     const showEndScreen = () =>{
         setEnd(true)
+        xWing.current.play();
     }
 
     const textNormal = <>
