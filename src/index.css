@@ -40,6 +40,15 @@ body {
   background-color: transparent;
   transition: background-color 2.5s;
 }
+.endScreen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: black;
+  transition: background-color 2.5s;
+}
 
 .intro {
   display: flex;

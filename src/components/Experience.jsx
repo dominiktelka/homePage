@@ -13,6 +13,7 @@ import {Speed} from "./Speed.jsx";
 import {ImageSpace} from "./Images.jsx";
 
 
+
 const LINE_NB_POINTS = 1000
 const CURVE_DISTANCE = 150;
 const CURVE_AHEAD_CAMERA = 0.008
@@ -142,7 +143,6 @@ export const Experience = () => {
 
 
         if(cameraGroup.current.position.z < -1474 ){
-            setEnd(true)
             xWingOutTl.current.play();
         }
     });
@@ -187,6 +187,8 @@ export const Experience = () => {
             xWingInTl.current.play();
         }
     }, [play]);
+
+
 
     return useMemo(()=>(
         <>

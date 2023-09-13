@@ -6,6 +6,7 @@ import LoadingUpdater from "./loading-screen/LoadingUpdater.jsx";
 
 
 
+
 function App() {
     const [isLoading, setIsLoading] = useState(true)
 

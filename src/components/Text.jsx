@@ -4,9 +4,14 @@ import React from "react";
 
 
 import {fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
+import {usePlay} from "../contexts/Play.jsx";
 
 
 export const TextSpace = ({CURVE_DISTANCE}) => {
+    const { setEnd} = usePlay();
+    const showEndScreen = () =>{
+        setEnd(true)
+    }
 
     const textNormal = <>
         <group position={[2.6*CURVE_DISTANCE,0.08*CURVE_DISTANCE,1.02*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
@@ -98,6 +103,12 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
                 I'm also an avid participant in JavaScript-related events,{"\n"}
                 Further enhancing my enthusiasm and{"\n"}
                 Making me a well-rounded and enjoyable team member.
+                <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
+            </Text>
+        </group>
+        <group position={[1.21*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
+            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen}>
+                About Me
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
@@ -197,6 +208,12 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
                 I'm also an avid participant in JavaScript-related events,{"\n"}
                 Further enhancing my enthusiasm and{"\n"}
                 Making me a well-rounded and enjoyable team member.
+                <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
+            </Text>
+        </group>
+        <group position={[1.21*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
+            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen}>
+                About Me
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
