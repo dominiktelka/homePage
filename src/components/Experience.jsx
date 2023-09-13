@@ -142,7 +142,7 @@ export const Experience = () => {
         xWing.current.quaternion.slerp(targetXwingQuaternion, delta * 2)
 
 
-        if(cameraGroup.current.position.z < -1474 ){
+        if(cameraGroup.current.position.z < -1470 ){
             xWingOutTl.current.play();
         }
     });
