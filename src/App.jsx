@@ -1,32 +1,22 @@
-import { Canvas } from "@react-three/fiber";
-import { Experience } from "./components/Experience";
-import {ScrollControls} from "@react-three/drei";
+import React, {Suspense, useState} from "react";
 import {Overlay} from "./components/Overlay.jsx";
-import MusicControls from "./components/MusicControls.jsx";
+import {Scene} from "./components/Scene.jsx";
+import LoadingScreen from "./loading-screen/LoadingScreen.jsx";
+import LoadingUpdater from "./loading-screen/LoadingUpdater.jsx";
+
 
 
 function App() {
+    const [isLoading, setIsLoading] = useState(true)
 
   return (
     <>
-      <Canvas >
-        <color attach="background" args={["#ececec"]} />
-          <ScrollControls pages={50}
-                          damping={1}
-                          style={{
-                              top: "10px",
-                              left: "0px",
-                              bottom: "10px",
-                              right: "10px",
-                              width: "auto",
-                              height: "auto",
-                              animation: "fadeIn 2.4s ease-in-out 1.2s forwards",
-                              opacity: 0,
-                          }}>
-              <Experience />
-          </ScrollControls>
-      </Canvas>
-        <Overlay/>
+        <LoadingScreen isVisible={isLoading}/>
+        <Suspense fallback={null}>
+            <LoadingUpdater setIsLoading={setIsLoading}/>
+            <Scene/>
+            <Overlay/>
+        </Suspense>
     </>
   );
 }
