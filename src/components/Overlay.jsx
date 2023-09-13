@@ -10,9 +10,6 @@ export const Overlay = () => {
 
     return (
         <div className={`overlay ${play ? "overlay--disable" : ""} ${hasScroll ? "overlay--scrolled" : ""}`}>
-            <div
-                className={`loader ${progress === 100 ? "loader--disappear" : ""}`}
-            />
             {progress === 100 &&(
                 <div className={`intro ${play ? "intro--disappear" : ""}`}>
                     <h1 className="logo">

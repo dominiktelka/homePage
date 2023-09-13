@@ -147,7 +147,7 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
-        <group position={[0.2*CURVE_DISTANCE,-0.18*CURVE_DISTANCE,-4.698*CURVE_DISTANCE]} rotation={[0, 0.68, 0.02]}>
+        <group position={[0.4*CURVE_DISTANCE,-0.18*CURVE_DISTANCE,-4.41*CURVE_DISTANCE]} rotation={[0, 0.6, 0]}>
             <Text anchorX="right" anchorY="middle" fontSize={0.3} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
                 Back-End Brilliance:{"\n"}
                 Excelling in Express.js and Node.js,{"\n"}
