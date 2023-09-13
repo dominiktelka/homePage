@@ -10,6 +10,7 @@ import {TextSpace} from "./Text.jsx";
 import {usePlay} from "../contexts/Play.jsx";
 import {gsap} from "gsap";
 import {Speed} from "./Speed.jsx";
+import {ImageSpace} from "./Images.jsx";
 
 
 const LINE_NB_POINTS = 1000
@@ -203,6 +204,7 @@ export const Experience = () => {
                 </group>
             </group>
             <TextSpace CURVE_DISTANCE={CURVE_DISTANCE}/>
+            <ImageSpace CURVE_DISTANCE={CURVE_DISTANCE}/>
             <group position={[0,-2,0]}>
                 <mesh>
                     <extrudeGeometry

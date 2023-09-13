@@ -9,6 +9,12 @@ import {fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
 export const TextSpace = ({CURVE_DISTANCE}) => {
 
     const textNormal = <>
+        <group position={[2.6*CURVE_DISTANCE,0.08*CURVE_DISTANCE,1.02*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
+            <Text anchorX="right" anchorY="middle" fontSize={1.2} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
+                My Tech Skills{"\n"}
+                <meshStandardMaterial color="yellow" onBeforeCompile={fadeOnBeforeCompileFlat}/>
+            </Text>
+        </group>
         <group position={[1.1*CURVE_DISTANCE,0.02*CURVE_DISTANCE,0.5*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
             <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
                 Beginning the Odyssey:{"\n"}
