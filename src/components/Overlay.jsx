@@ -46,7 +46,7 @@ export const Overlay = () => {
                 </>
                 )
             }
-            <div className={`outro ${end ? "outro--appear" : ""}`} >
+            <div className={`${end ? "outro--appear" : "outro"}`} >
                 <p className="outro__text">
                     Beginning the Odyssey: I started my JavaScript journey over two years ago, eager to conquer the entire ecosystem.</p>
                 <p className="outro__text">  Building Strong Foundations: I mastered JavaScript basics, laying the groundwork for advanced learning.</p>
@@ -58,7 +58,7 @@ export const Overlay = () => {
                 <p className="outro__text">  Skills AND Qualities Unveiled: Throughout this journey, my commitment, attention to detail, rapid learning, teamwork, independence, and strong interpersonal skills have complemented my technical expertise, making me a well-rounded candidate ready to excel in any development team.</p>
                 <p className="outro__text"> </p>
             </div>
-            <div className={`iconsContainer ${end ? "iconsContainer--appear" : ""}`} style={{ pointerEvents: end ? 'all' : 'none' }} >
+            <div className={` ${end ? "iconsContainer--appear" : "iconsContainer"}`} style={{ pointerEvents: end ? 'all' : 'none' }} >
                 <p className="info">Contact me 📨 </p>
                 <img className="img" src={'./icons/linkedin.png'} onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"}/>
                 <p className="info2">Check Github for more projects 💻 </p>

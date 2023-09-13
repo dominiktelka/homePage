@@ -222,6 +222,16 @@ body {
 
 .outro--appear {
   opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 4s ease-in-out;
+  background-color: black;
 }
 
 .outro__text {
@@ -314,6 +324,16 @@ body {
 }
 .iconsContainer--appear {
   opacity: 1;
+  position: absolute;
+  top: 80svh;
+  left: 50svw;
+  transform: translate(-50%);
+  width: 80vw;
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  transition: opacity 4s ease-in-out;
 }
 
 .musicButton{
