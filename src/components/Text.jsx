@@ -105,6 +105,12 @@ export const TextSpace = ({CURVE_DISTANCE}) => {
 
 
     const textMobile = <>
+        <group position={[2.6*CURVE_DISTANCE,0.15*CURVE_DISTANCE,0.93*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
+            <Text anchorX="right" anchorY="middle" fontSize={1.2} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
+                My Tech Skills{"\n"}
+                <meshStandardMaterial color="yellow" onBeforeCompile={fadeOnBeforeCompileFlat}/>
+            </Text>
+        </group>
         <group position={[1.1*CURVE_DISTANCE,0.03*CURVE_DISTANCE,0.48*CURVE_DISTANCE]} rotation={[0, 1.3, 0]}>
             <Text anchorX="right" anchorY="middle" fontSize={0.3} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
                 Beginning the Odyssey:{"\n"}
