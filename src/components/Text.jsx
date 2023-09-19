@@ -69,8 +69,8 @@ export const TextSpace = ({CURVE_DISTANCE, xWing}) => {
             <Text anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
                 Tech Stack Mastery:{"\n"}
                 I polished CSS3, HTML5 skills and{"\n"}
-                Used Git and Jira for{"\n"}
-                Version control and project management.
+                Used Git for version control{"\n"}
+                And Jira for project management.
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
@@ -93,8 +93,8 @@ export const TextSpace = ({CURVE_DISTANCE, xWing}) => {
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
-        <group position={[0.55*CURVE_DISTANCE,0.4*CURVE_DISTANCE,-9.38*CURVE_DISTANCE]} rotation={[0.02, -1, 0]} >
-            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
+        <group position={[0.55*CURVE_DISTANCE,0.4*CURVE_DISTANCE,-9.37*CURVE_DISTANCE]} rotation={[0.02, -1, 0]} >
+            <Text  anchorX="right" anchorY="middle" fontSize={0.7} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"}>
 
                 Passions Beyond Code:{"\n"}
                 Alongside my skills,{"\n"}
@@ -107,9 +107,9 @@ export const TextSpace = ({CURVE_DISTANCE, xWing}) => {
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
-        <group position={[1.21*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
-            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen}>
-                About Me
+        <group position={[1.24*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
+            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen} >
+                Click me for more info
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>

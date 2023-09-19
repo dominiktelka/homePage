@@ -3,15 +3,16 @@ import { createContext, useContext, useState } from "react";
 const Context = createContext();
 
 export const PlayProvider = ({ children }) => {
-  const [play, setPlay] = useState(false);
+  const [playGame, setPlayGame] = useState(false);
   const [end, setEnd] = useState(false);
   const [hasScroll, setHasScroll] = useState(false);
+
 
   return (
     <Context.Provider
       value={{
-        play,
-        setPlay,
+        playGame,
+        setPlayGame,
         end,
         setEnd,
         hasScroll,

@@ -21,6 +21,8 @@ const CURVE_AHEAD_XWING = 0.02;
 const XWING_MAX_ANGLE = 35;
 
 export const Experience = () => {
+    const { playGame, hasScroll,end} = usePlay();
+
 
 
     const curve = useMemo(()=>{
@@ -58,6 +60,7 @@ export const Experience = () => {
     const cameraRail = useRef()
 
     useFrame((_state, delta) => {
+        // console.log(cameraGroup.current.position.z)
 
         if(window.innerWidth > window.innerHeight){
             cameraRef.current.fov = 30;
@@ -173,15 +176,29 @@ export const Experience = () => {
         });
     }, []);
 
-    const { play} = usePlay();
 
     useEffect(() => {
-        if (play) {
-            const audio = document.getElementById("background-music");
-            audio.play();
+        if (playGame) {
             xWingInTl.current.play();
         }
-    }, [play]);
+    }, [playGame]);
+
+
+
+    useEffect(() => {
+        const listener = new THREE.AudioListener();
+        const sound = new THREE.Audio(listener);
+        const audioLoader = new THREE.AudioLoader();
+
+        audioLoader.load('./music/Galactic-CCC_1.mp3', function (buffer) {
+            sound.setBuffer(buffer);
+            sound.setLoop(true);
+            sound.setVolume(0.02);
+            if (hasScroll) {
+                sound.play();
+            }
+        });
+    }, [hasScroll]);
 
 
 

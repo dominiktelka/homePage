@@ -46,8 +46,20 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: black;
-  transition: background-color 2.5s;
+  opacity: 1;
+  transition:opacity 4s ease-in-out;
+  background-image: url('./XwingCocpit/cocpit.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.endScreenDisable{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  opacity: 0;
 }
 
 .intro {
@@ -161,7 +173,7 @@ body {
   font-size: 1.5rem;
   margin-top:1.5svh;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 1;
   font-family: "Jedi",sans-serif;
 }
 .info2{
@@ -169,7 +181,7 @@ body {
   font-size: 1.5rem;
   margin-top:1.5svh;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 1;
   font-family: "Jedi",sans-serif;
 }
 
@@ -211,7 +223,7 @@ body {
   transform: translateX(-50%) translateY(50%);
 }
 
-.intro--disappear .explore {
+.intro--disappear {
   animation: fadeOut 1s ease-in-out forwards;
 }
 
@@ -226,56 +238,46 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 4s ease-in-out;
-  background-color: black;
 }
 
-.outro--appear {
-  opacity: 1;
+.outroAppear {
+  opacity: 0;
+  z-index: -1;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, z-index 2.5s ease-in-out;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 5svh;
+  left: 50svw;
+  width: 60svw;
+  height: 55svh;
+  transform: translate(-50%);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 4s ease-in-out;
-  background-color: black;
+  background: black;
+  border-radius: 2rem;
+  padding: 1rem
+}
+.outroAppear.visible {
+  z-index: 0;
+  opacity: 1;
+  max-height: 60svh; /* Dostosuj maksymalną wysokość do potrzeb */
 }
 
-.outro__text {
-  position: absolute;
+
+.outroText {
   font-family: "Jedi",sans-serif;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: yellow;
   text-align: center;
-  opacity: 0.8;
+  opacity: 1;
+}
+.outroText:first-child {
+  margin-top: 2.5rem;
 }
 
-.outro__text:nth-child(1){
-  top:0;
-}
-.outro__text:nth-child(2){
-  top:8svh;
-}
-.outro__text:nth-child(3){
-  top:16svh;
-}
-.outro__text:nth-child(4){
-  top:24svh;
-}
-.outro__text:nth-child(5){
-  top:32svh;
-}
-.outro__text:nth-child(6){
-  top:40svh;
-}
-.outro__text:nth-child(7){
-  top:48svh;
-}
-.outro__text:nth-child(8){
-  top:58svh;
-}
 @keyframes fadeUp {
   0% {
     opacity: 0;
@@ -317,7 +319,7 @@ body {
 
 .iconsContainer {
   position: absolute;
-  top: 80svh;
+  top: 20svh;
   left: 50svw;
   transform: translate(-50%);
   width: 80vw;
@@ -326,15 +328,14 @@ body {
   justify-content: space-evenly;
   padding: 15px;
   opacity: 0;
-  transition: opacity 4s ease-in-out;
+  transition: opacity 2s ease-in-out, z-index 4s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
 }
-.iconsContainer .img{
-  cursor: pointer;
-}
-.iconsContainer--appear {
+.visible2 {
   opacity: 1;
   position: absolute;
-  top: 80svh;
+  top: 20svh;
   left: 50svw;
   transform: translate(-50%);
   width: 80vw;
@@ -342,18 +343,44 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 15px;
-  transition: opacity 4s ease-in-out;
+  transition: opacity 2s ease-in-out, z-index 2s ease-in-out;
+  z-index: 0;
 }
-
-.musicButton{
-  position:absolute;
-  top: 2svh;
-  left: 2svw;
-  pointer-events: all;
+.aboutMe{
   border: none;
   background: transparent;
-  scale: 2;
+  color: yellow;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 1svh;
+  left: 50svw;
+  transform: translate(-50%);
   cursor: pointer;
+  font-family: "Jedi",sans-serif;
+}
+.socialMedia{
+  border: none;
+  background: transparent;
+  color: yellow;
+  font-size: 1.8rem;
+  position: absolute;
+  top: 7svh;
+  left: 50svw;
+  transform: translate(-50%);
+  cursor: pointer;
+  font-family: "Jedi",sans-serif;
+}
+.restartButton{
+  border: none;
+  background: transparent;
+  color: yellow;
+  font-size: 1.8rem;
+  position: absolute;
+  bottom: 1svh;
+  left: 50svw;
+  transform: translate(-50%);
+  cursor: pointer;
+  font-family: "Jedi",sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -375,6 +402,7 @@ body {
     font-size: 0.8rem;
     width: 80svw;
     text-align: center;
+
   }
 
 .info{
