@@ -48,7 +48,7 @@ body {
   right: 0;
   opacity: 1;
   transition:opacity 4s ease-in-out;
-  background-image: url('./XwingCocpit/cocpit.jpeg');
+  background-image: url('/XwingCocpit/cocpit.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -242,10 +242,9 @@ body {
 
 .outroAppear {
   opacity: 0;
-  z-index: -1;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out, z-index 2.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
   position: absolute;
   top: 5svh;
   left: 50svw;
@@ -260,8 +259,7 @@ body {
   border-radius: 2rem;
   padding: 1rem
 }
-.outroAppear.visible {
-  z-index: 0;
+.visible {
   opacity: 1;
   max-height: 60svh; /* Dostosuj maksymalną wysokość do potrzeb */
 }
@@ -364,7 +362,7 @@ body {
   color: yellow;
   font-size: 1.8rem;
   position: absolute;
-  top: 7svh;
+  top: 10svh;
   left: 50svw;
   transform: translate(-50%);
   cursor: pointer;
