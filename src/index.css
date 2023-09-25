@@ -389,7 +389,7 @@ body {
   font-family: "Jedi",sans-serif;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 401px) and (max-width: 767px) {
   .logo {
     font-size: 2.3rem;
     letter-spacing: 0.25rem;
@@ -445,7 +445,7 @@ body {
     font-size: 0.8rem;
   }
   .outroText:first-child{
-    margin-top: 20svh;
+    margin-top: 64svh;
   }
   .outroText:last-child{
     padding-bottom:2svh;
@@ -470,7 +470,7 @@ body {
 
 @media (max-width: 400px) {
   .outroText:first-child {
-    margin-top: 40svh;
+    margin-top: 50svh;
   }
   .info{
     font-size: 1rem;
