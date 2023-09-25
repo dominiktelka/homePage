@@ -468,7 +468,7 @@ body {
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 400px) {
   .outroText:first-child {
     margin-top: 40svh;
   }
