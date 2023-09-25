@@ -389,7 +389,7 @@ body {
   font-family: "Jedi",sans-serif;
 }
 
-@media (min-width: 401px) and (max-width: 767px) {
+@media (max-width: 767px) {
   .logo {
     font-size: 2.3rem;
     letter-spacing: 0.25rem;
