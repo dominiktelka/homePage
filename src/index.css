@@ -445,7 +445,7 @@ body {
     font-size: 0.8rem;
   }
   .outroText:first-child{
-    margin-top: 5svh;
+    margin-top: 20svh;
   }
   .outroText:last-child{
     padding-bottom:2svh;
