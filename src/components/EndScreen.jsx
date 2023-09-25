@@ -36,6 +36,7 @@ export const EndScreen = () => {
                 <img className="img" src={'./icons/linkedin.png'} onClick={() => window.location.href = "https://www.linkedin.com/in/dominik-telka-203102183/"} alt="linkedin" style={{cursor:"pointer"}}/>
                 <p className="info2">Check Github for more projects 💻 </p>
                 <img className="img2" src={'./icons/githubFiolet.png'} onClick={() => window.location.href ='https://github.com/dominiktelka'} alt="github" style={{cursor:"pointer"}}/>
+                <p className="emailInfo">dominiktelka@gmail.com</p>
             </div>
             <button className="restartButton" onClick={ () => window.location.href = "https://dominik-telka.vercel.app/"}>Restart</button>
         </section>

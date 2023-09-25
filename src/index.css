@@ -184,6 +184,14 @@ body {
   opacity: 1;
   font-family: "Jedi",sans-serif;
 }
+.emailInfo{
+  position: absolute;
+  top: 10svh;
+  color: yellow;
+  font-size: 1.5rem;
+  margin-top:1.5svh;
+  opacity: 1;
+}
 
 .explore {
   padding: 1rem 2rem;
@@ -261,7 +269,7 @@ body {
 }
 .visible {
   opacity: 1;
-  max-height: 60svh; /* Dostosuj maksymalną wysokość do potrzeb */
+  max-height: 80svh; /* Dostosuj maksymalną wysokość do potrzeb */
 }
 
 
@@ -429,5 +437,25 @@ body {
   }
   .img2{
     transform: translateX(2svh);
+  }
+  .outroAppear {
+    width: 80svw;
+    height: 67svh;
+  }
+  .visible2 {
+    top: 35svh;
+  }
+  .iconsContainer {
+    top: 35svh;
+  }
+  .intro__mouse::before {
+    top: 50px;
+  }
+
+  @keyframes wheel {
+    to {
+      opacity: 0;
+      top: 10px;
+    }
   }
 }

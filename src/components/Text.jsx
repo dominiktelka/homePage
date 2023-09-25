@@ -212,9 +212,9 @@ export const TextSpace = ({CURVE_DISTANCE, xWing}) => {
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
-        <group position={[1.21*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
-            <Text  anchorX="right" anchorY="middle" fontSize={0.8} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen}>
-                About Me
+        <group position={[1.233*CURVE_DISTANCE,-0.05*CURVE_DISTANCE,-9.89*CURVE_DISTANCE]} rotation={[0, -1, 0]} >
+            <Text  anchorX="right" anchorY="middle" fontSize={0.7} maxWidtk={2.5} textAlign={"center"} font={"/font/jedi.ttf"} onClick={showEndScreen}>
+                Click me for more info
                 <meshStandardMaterial color="white" onBeforeCompile={fadeOnBeforeCompileFlat}/>
             </Text>
         </group>
