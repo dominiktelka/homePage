@@ -190,7 +190,7 @@ export const Experience = () => {
         const sound = new THREE.Audio(listener);
         const audioLoader = new THREE.AudioLoader();
 
-        audioLoader.load('./music/Galactic-CCC_1.mp3', function (buffer) {
+        audioLoader.load('./music/Galactic.mp3', function (buffer) {
             sound.setBuffer(buffer);
             sound.setLoop(true);
             sound.setVolume(0.02);
