@@ -8,10 +8,12 @@
   width: 100svw;
   height: 100svh;
 }
-
 body {
   margin: 0;
+  overflow: hidden;
+  touch-action: none;
 }
+
 ::-webkit-scrollbar {
   width: 2px;
 }
@@ -51,6 +53,7 @@ body {
   background-image: url('/XwingCocpit/cocpit.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 2;
 }
 .endScreenDisable{
   position: absolute;
@@ -244,16 +247,33 @@ body {
   transition: opacity 4s ease-in-out;
 }
 
-.outroAppear {
-  opacity: 0;
-  max-height: 0;
+/*.outroAppear {*/
+/*  opacity: 0;*/
+/*  max-height: 0;*/
+/*  overflow-y: auto;*/
+/*  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;*/
+/*  position: absolute;*/
+/*  top: 5svh;*/
+/*  left: 50svw;*/
+/*  width: 60svw;*/
+/*  height: 80svh;*/
+/*  transform: translate(-50%);*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  background: black;*/
+/*  border-radius: 2rem 0 0 2rem;*/
+/*  padding: 1rem*/
+/*}*/
+.visible {
+  opacity: 1;
   overflow-y: auto;
-  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+  transition: opacity 1s ease-in-out, max-height 1s ease-in-out;
   position: absolute;
-  top: 5svh;
   left: 50svw;
   width: 60svw;
-  height: 80svh;
+  height: 60svh;
   transform: translate(-50%);
   display: flex;
   flex-direction: column;
@@ -261,21 +281,48 @@ body {
   justify-content: center;
   background: black;
   border-radius: 2rem 0 0 2rem;
-  padding: 1rem
-}
-.visible {
-  opacity: 1;
-  max-height: 80svh; /* Dostosuj maksymalną wysokość do potrzeb */
+  padding: 1rem;
+  top: 6svh;
 }
 
+.outroAppear {
+  opacity: 0;
+  overflow-y: auto;
+  transition: opacity 1s ease-in-out, max-height 1s ease-in-out;
+  position: absolute;
+  left: 50svw;
+  width: 60svw;
+  height: 60svh;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  border-radius: 2rem 0 0 2rem;
+  padding: 1rem;
+  top: 6svh;
+  z-index: -1;
+  /*left: 50%;*/
+  /*width: 60vw;*/
+  /*height: 100vh;*/
+}
 
 .outroText {
-  font-family: "Jedi",sans-serif;
-  font-size: 1.2rem;
-  color: yellow;
+  font-family: sans-serif;
+  font-size: 1rem;
+  color: whitesmoke;
   text-align: center;
   opacity: 1;
+  margin: 1rem 0; /* Dodałem margines między paragrafami dla lepszej czytelności */
 }
+/*.outroText {*/
+/*  font-family: sans-serif;*/
+/*  font-size: 1.2rem;*/
+/*  color: whitesmoke;*/
+/*  text-align: center;*/
+/*  opacity: 1;*/
+/*}*/
 .outroText:first-child {
   margin-top: 8.5rem;
 }
@@ -330,7 +377,7 @@ body {
   justify-content: space-evenly;
   padding: 15px;
   opacity: 0;
-  transition: opacity 2s ease-in-out, z-index 4s ease-in-out;
+  transition: opacity 1s ease-in-out, z-index 1s ease-in-out;
   pointer-events: none;
   z-index: 0;
 }
@@ -345,7 +392,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   padding: 15px;
-  transition: opacity 2s ease-in-out, z-index 2s ease-in-out;
+  transition: opacity 1s ease-in-out, z-index 1s ease-in-out;
   z-index: 0;
 }
 .aboutMe{
@@ -384,6 +431,7 @@ body {
   cursor: pointer;
   font-family: "Jedi",sans-serif;
 }
+
 
 @media (max-width: 767px) {
   .logo {
@@ -436,6 +484,15 @@ body {
     height: 65svh;
     border-radius: 2rem 0 0 2rem;
     padding-bottom: 10px;
+    z-index: -1;
+  }
+  .visible{
+    top: 10svh;
+    overflow-y: auto;
+    width: 70svw;
+    height: 65svh;
+    border-radius: 2rem 0 0 2rem;
+    padding-bottom: 10px;
   }
   .outroText{
     font-size: 0.8rem;
@@ -473,9 +530,6 @@ body {
 }
 
 @media (max-width: 400px) {
-  .outroText:first-child {
-    margin-top: 50svh;
-  }
   .info{
     font-size: 1rem;
     width: 40svw;
@@ -515,8 +569,18 @@ body {
 
 }
 @media (min-width: 768px) and (max-width: 1090px){
+  .visible {
+    height: auto;
+  }
+  .outroText{
+    font-size:18px
+  }
+
+  .outroAppear {
+    height: auto;
+  }
   .outroText:first-child{
-    margin-top: 15svh;
+    margin-top: 0svh;
   }
   .outroText:last-child{
     margin-bottom: 0;
@@ -539,5 +603,31 @@ body {
   }
   .emailInfo{
     top: 17svh;
+  }
+}
+
+@media (min-width: 280px) and (max-width: 320px){
+  .outroText:first-child {
+    margin-top: 80svh;
+  }
+}
+@media (min-width: 321px) and (max-width: 360px){
+  .outroText:first-child {
+    margin-top: 45svh;
+  }
+}
+@media (min-width: 361px) and (max-width: 375px){
+  .outroText:first-child {
+    margin-top:55svh;
+  }
+}
+@media (min-width: 376px) and (max-width: 410px){
+  .outroText:first-child {
+    margin-top:25svh;
+  }
+}
+@media (min-width: 410px) and (max-width: 460px){
+  .outroText:first-child {
+    margin-top:15svh;
   }
 }

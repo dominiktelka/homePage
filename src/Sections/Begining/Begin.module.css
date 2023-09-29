@@ -1,0 +1,67 @@
+.beginSection {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    position:absolute;
+    width: 50vw;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    text-align: center;
+    top:20svh;
+    right:10svw;
+    color:whitesmoke;;
+}
+
+.titleSection {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.pSection {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 459px) {
+    .beginSection {
+        width: 90vw;
+        padding: 0;
+        max-width: 100%;
+        transform: translate(-50%);
+        left: 50%;
+        top: 0;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        text-align: center;
+    }
+
+    .titleSection {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+
+    .pSection {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 768px) {
+    .beginSection {
+        width: 80vw;
+        top:0;
+    }
+
+    .titleSection {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .pSection {
+        font-size: 1.1rem;
+        line-height: 1.5;
+    }
+}

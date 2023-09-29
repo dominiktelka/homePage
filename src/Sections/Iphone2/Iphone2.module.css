@@ -1,0 +1,173 @@
+.iphoneSection {
+    font-family: 'Arial', sans-serif;
+    width: 40vw;
+    height: auto;
+    position: absolute;
+    left: 3vw;
+    top: 5vh;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(9, 1, 1, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+}
+
+.projectTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.projectDescription {
+    font-size: 14px;
+}
+
+.projectTechnologiesTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.projectTechnologiesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projectTechnologiesList li {
+    font-size: 16px;
+}
+.projectImage {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.projectImageWrapper {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.projectImageWrapper:hover {
+    transform: scale(1.05);
+    filter: blur(2px);
+}
+
+@media (max-width: 459px) {
+    .iphoneSection {
+        font-family: 'Arial', sans-serif;
+        width: 85vw;
+        height: auto;
+        position: absolute;
+        margin: 0 auto;
+        top: 1svh;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%);
+        color: whitesmoke;
+        background-color: rgba(9, 1, 1, 0.3);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+    }
+
+    .projectTitle {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .projectDescription {
+        font-size: 11px;
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 14px;
+        font-weight: bold;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .projectTechnologiesList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 12px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .projectImage {
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+        margin: 0.5svh auto;
+    }
+
+    .projectImageWrapper {
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        max-width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .projectImageWrapper:hover {
+        transform: scale(1.05);
+        filter: blur(2px);
+    }
+}
+@media (min-width: 460px) and (max-width:768px) {
+    .iphoneSection {
+        font-family: 'Arial', sans-serif;
+        width: 80vw;
+        height: auto;
+        position: absolute;
+        margin: 0 auto;
+        top: 5vh;
+        left: 50%;
+        transform: translate(-50%);
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(9, 1, 1, 0.3);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+    }
+
+    .projectTitle {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .projectDescription {
+        font-size: 16px;
+        width: 90%;
+        margin: 0 auto;
+        line-height: 1.4;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 18px;
+        font-weight: bold;
+        width: 90%;
+        margin: 1svh auto;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 14px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+

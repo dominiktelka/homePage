@@ -1,0 +1,175 @@
+.iphoneSection {
+    font-family: 'Arial', sans-serif;
+    width: 40vw;
+    height: 70svh;
+    position: absolute;
+    left: 3svw;
+    top: 5svh;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(12, 7, 7, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    overflow: hidden; /* Ukryj wszystkie elementy, które wykraczają poza ramy */
+}
+
+.projectTitle {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.projectDescription {
+    font-size: 14px;
+}
+
+.projectTechnologiesTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.projectTechnologiesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projectTechnologiesList li {
+    font-size: 16px;
+}
+
+.projectVideo {
+    width: 60%;
+    height: auto;
+    object-fit: cover; /* Zachowaj proporcje i wypełnij element */
+}
+
+.projectImageWrapper {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    max-width: 100%; /* Ogranicz szerokość do rodzica */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.projectImageWrapper:hover {
+    transform: scale(1.05);
+}
+
+
+@media (max-width: 459px) {
+    .iphoneSection {
+        font-family: 'Arial', sans-serif;
+        width: 100svw;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(12, 7, 7, 0.4);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden; /* Ukryj wszystkie elementy, które wykraczają poza ramy */
+    }
+
+    .projectTitle {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .projectDescription {
+        width: 90%;
+        font-size: 12px;
+        margin: 0 auto;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 14px;
+        width: 80%;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+
+    .projectTechnologiesList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 12px;
+        width: 80%;
+        font-weight: bold;
+        margin: 0 auto;
+    }
+
+    .projectVideo {
+        margin-top: 2svh;
+        margin-bottom: 1svh;
+        width: 60%;
+        height: auto;
+        object-fit: cover; /* Zachowaj proporcje i wypełnij element */
+    }
+
+    .projectImageWrapper {
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        max-width: 100%; /* Ogranicz szerokość do rodzica */
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .projectImageWrapper:hover {
+        transform: scale(1.05);
+    }
+}
+
+@media (min-width: 460px) and (max-width: 768px) {
+    .iphoneSection {
+        font-family: 'Arial', sans-serif;
+        width: 100svw;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(12, 7, 7, 0.4);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden; /* Ukryj wszystkie elementy, które wykraczają poza ramy */
+    }
+
+    .projectTitle {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .projectDescription {
+        width: 80%;
+        font-size: 16px;
+        margin: 5px auto;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 18px;
+        width: 80%;
+        font-weight: bold;
+        margin: 5px auto;
+    }
+
+    .projectTechnologiesList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 16px;
+        width: 80%;
+        font-weight: bold;
+        margin: 5px auto;
+    }
+
+
+}
+

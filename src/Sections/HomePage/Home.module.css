@@ -1,0 +1,139 @@
+.homePageSection {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 30svw;
+    height: 50svh;
+    left: 5svw;
+    top: 30svh;
+    position: absolute;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(12, 7, 7, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.homePageTitle {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.homePageDescription {
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.homePageTechnologiesTitle {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+
+.homePageTechnologiesList {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.homePageTechnologiesList li {
+    margin: 5px 0;
+}
+
+@media (max-width: 459px) {
+    .homePageSection {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        width: 90svw;
+        margin: 0 auto;
+        left: 50%;
+        transform: translate(-50%);
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        text-align: center;
+        position:absolute;
+        top:0;
+        right:10svw;
+        color:whitesmoke;
+    }
+
+    .homePageTitle {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .homePageDescription {
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .homePageTechnologiesTitle {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 0.9rem;
+    }
+
+    .homePageTechnologiesList {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .homePageTechnologiesList li {
+        margin: 5px 0;
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 460px) and (max-width: 768px) {
+    .homePageSection {
+        font-family: Arial, sans-serif;
+        padding: 0;
+        width: 70svw;
+        margin: 0 auto;
+        transform: none;
+        height: auto;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        text-align: center;
+        position:absolute;
+        top:0;
+        right: 0;
+        color:whitesmoke;
+    }
+
+    .homePageTitle {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .homePageDescription {
+        width: 70%;
+        margin:0 auto;
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .homePageTechnologiesTitle {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1rem;
+    }
+
+    .homePageTechnologiesList {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .homePageTechnologiesList li {
+        margin: 5px 0;
+    }
+}

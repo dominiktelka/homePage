@@ -26,13 +26,6 @@ export const Overlay = () => {
                     </button>
                 </div>
             )}
-            {playGame && (
-                <div className={`${hasScroll ? "overlay--scrolled" : ""}`}>
-                    <p className="intro__scroll">Scroll to begin the journey</p>
-                    <div className="intro__mouse"></div>
-                </div>
-                )
-            }
         </div>
     );
 };

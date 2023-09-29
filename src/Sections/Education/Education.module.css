@@ -1,0 +1,136 @@
+.educationSection {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 30vw;
+    height: auto;
+    position: absolute;
+    left: 3svw;
+    top: 5svh;
+    color: whitesmoke;
+    background-color: rgba(17, 7, 7, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.educationTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.educationSubtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.educationSchool,
+.educationLocation,
+.educationDate,
+.educationDescription,
+.educationThesis{
+    font-size: 16px;
+    margin: 5px 0;
+}
+.educationThesis{
+    font-weight: bold;
+}
+
+
+@media (max-width: 459px) {
+    .educationSection {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        width: 60svw;
+        height: auto;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        color: whitesmoke;
+        background-color: rgba(17, 7, 7, 0.4);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .educationTitle {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .educationSubtitle {
+        font-size: 15px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .educationSchool,
+    .educationLocation,
+    .educationDate,
+    .educationDescription,
+    .educationThesis{
+        font-size: 12px;
+        margin: 5px 0 ;
+    }
+    .educationThesis{
+        font-weight: bold;
+        margin-top: 1svh;
+    }
+}
+@media (min-width: 460px) and (max-width:768px) {
+    .educationSection {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        width: 80svw;
+        height: auto;
+        position: absolute;
+        top: 2svh;
+        left: 50%;
+        transform: translate(-50%);
+        color: whitesmoke;
+        background-color: rgba(17, 7, 7, 0.4);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .educationTitle {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .educationSubtitle {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .educationSchool,
+    .educationLocation,
+    .educationDate,
+    .educationDescription{
+        font-size: 16px;
+        margin: 10px 0 ;
+    }
+    .educationThesis{
+        width: 70%;
+        font-size: 20px;
+        font-weight: bold;
+        margin: 20px auto ;
+    }
+}
+
+

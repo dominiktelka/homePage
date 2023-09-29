@@ -1,10 +1,6 @@
-
 import React from "react";
-import {fadeOnBeforeCompileFlat} from "../utils/fadeMaterial.js";
 import * as THREE from 'three'
 import { Image as ImageImpl } from '@react-three/drei'
-
-
 
 export const ImageSpace = ({CURVE_DISTANCE}) => {
 
@@ -12,9 +8,6 @@ export const ImageSpace = ({CURVE_DISTANCE}) => {
 
         return <ImageImpl {...props} />
     }
-    // const handleClick = () => {
-    //     window.location.href = 'https://github.com'
-    // };
     function Images() {
         return (
             <group >

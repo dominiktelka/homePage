@@ -1,6 +1,6 @@
-import { Instance, Instances, useScroll } from "@react-three/drei";
+import { Instance, Instances} from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import {useRef} from "react";
 import { AdditiveBlending, DoubleSide, MathUtils } from "three";
 
 const INSTANCES = 240;
@@ -21,7 +21,7 @@ const SpeedShape = () => {
       y: MathUtils.randFloatSpread(5),
       z: MathUtils.randFloatSpread(8),
     };
-    randomSpeed = MathUtils.randFloat(16, 20);
+    randomSpeed = MathUtils.randFloat(1, 5);
   };
   resetRandom();
 
@@ -41,25 +41,15 @@ const SpeedShape = () => {
       color="white"
       position={[randomPosition.x, randomPosition.y, randomPosition.z]}
       rotation-y={Math.PI / 2}
-      scale={5}
+      scale={0.3}
+      style={{pointerEvents:"none"}}
     />
   );
 };
 
 export const Speed = () => {
   const speedMaterial = useRef();
-  const scroll = useScroll();
-  const lastScroll = useRef(0);
 
-  useFrame((_state, delta) => {
-    if (scroll.offset - lastScroll.current > 0.0001) {
-      speedMaterial.current.opacity = MAX_OPACITY;
-    }
-    lastScroll.current = scroll.offset;
-    if (speedMaterial.current.opacity > 0) {
-      speedMaterial.current.opacity -= delta * 0.2;
-    }
-  });
 
   return (
     <group>
@@ -69,8 +59,8 @@ export const Speed = () => {
           ref={speedMaterial}
           side={DoubleSide}
           blending={AdditiveBlending}
-          opacity={0}
-          transparent
+          opacity={-1}
+          // transparent
         />
         {Array(INSTANCES)
           .fill()

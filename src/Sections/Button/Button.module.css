@@ -1,0 +1,113 @@
+.sectionButtons {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    width: 80svw;
+    justify-content: space-between;
+    height: 5svh;
+    align-items: flex-end;
+
+}
+
+
+.buttonInfo, .soundButton {
+    width: auto;
+    min-width: 5svw;
+    height: 5svh;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    bottom: 1svh;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.buttonInfo:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.buttonInfo:active {
+    color: #000
+}
+
+.buttonInfo:active:after {
+    background: transparent;
+}
+
+.buttonInfo:hover:before {
+    opacity: 1;
+}
+.buttonInfo2:before {
+    opacity: 1;
+}
+
+.buttonInfo:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+@media (max-width: 768px) {
+    .sectionButtons {
+        position: absolute;
+        bottom: 10svh;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-wrap: wrap;
+        display: flex;
+        flex-direction: row;
+        width: 90svw;
+        justify-content: space-between;
+        height: 5svh;
+        align-items: flex-end;
+
+    }
+
+
+    .buttonInfo {
+        flex-grow: 1;
+        min-width: 10svw;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
+        bottom: 1svh;
+        z-index: 0;
+        border-radius: 10px;
+        scale: 0.9;
+    }
+
+}

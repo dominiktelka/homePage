@@ -1,0 +1,180 @@
+.xwingSection {
+    font-family: 'Arial', sans-serif;
+    width: 40vw;
+    height: AUTO;
+    position: absolute;
+    left: 3vw;
+    top: 5vh;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(16, 12, 12, 0.5);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    overflow: hidden;
+}
+
+.projectTitle {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.projectDescription {
+    font-size: 14px;
+}
+
+.projectTechnologiesTitle {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.projectTechnologiesList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.projectTechnologiesList li {
+    font-size: 16px;
+}
+
+.projectExplore {
+    font-size: 20px;
+}
+
+.projectVideo {
+    width: 60%;
+    height: auto;
+    object-fit: cover;
+}
+
+.projectImageWrapper {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.projectImageWrapperMobile {
+    position: relative;
+    max-width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.projectImageWrapper:hover {
+    transform: scale(1.05);
+}
+
+
+
+@media (max-width: 459px) {
+    .xwingSection {
+        font-family: 'Arial', sans-serif;
+        width: 90svw;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 2vh;
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(16, 12, 12, 0.5);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+    }
+
+    .projectTitle {
+        font-size: 12px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .projectDescription {
+        font-size: 10px;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 10px;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 9px;
+    }
+
+    .projectExplore {
+        font-size: 12px;
+    }
+
+    .projectVideo {
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+@media (min-width: 460px) and (max-width:768px) {
+    .xwingSection {
+        font-family: 'Arial', sans-serif;
+        width: 90svw;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 2vh;
+        text-align: center;
+        color: whitesmoke;
+        background-color: rgba(16, 12, 12, 0.5);
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+        overflow: hidden;
+    }
+
+    .projectTitle {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 0;
+    }
+
+    .projectDescription {
+        font-size: 12px;
+    }
+
+    .projectTechnologiesTitle {
+        font-size: 14px;
+    }
+
+    .projectTechnologiesList li {
+        font-size: 12px;
+    }
+
+    .projectExplore {
+        font-size: 14px;
+    }
+
+    .projectVideo {
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .projectImageWrapper {
+        position: relative;
+        cursor: pointer;
+        transition: transform 0.3s ease, filter 0.3s ease;
+        max-width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    .projectImageWrapperMobile {
+        position: relative;
+        max-width: 100%;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .projectImageWrapper:hover {
+        transform: scale(1.05);
+    }
+}
+

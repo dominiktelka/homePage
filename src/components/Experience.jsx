@@ -1,7 +1,10 @@
-import {Float, PerspectiveCamera, useScroll, OrbitControls, PositionalAudio, Stars} from "@react-three/drei";
+import {
+    Float,
+    PerspectiveCamera,
+} from "@react-three/drei";
 import {Background} from "./Background.jsx";
 import {Xwing} from "./Xwing.jsx";
-import React, {useEffect, useLayoutEffect, useMemo, useRef} from "react";
+import React, {useEffect, useLayoutEffect, useMemo, useRef, useState} from "react";
 import * as THREE from "three"
 import {useFrame} from "@react-three/fiber";
 import {Galaxy} from "./Galaxy.jsx";
@@ -11,6 +14,9 @@ import {usePlay} from "../contexts/Play.jsx";
 import {gsap} from "gsap";
 import {Speed} from "./Speed.jsx";
 import {ImageSpace} from "./Images.jsx";
+import SpaceShip from "./SpaceShip.jsx";
+import spaceShip from "./SpaceShip.jsx";
+
 
 
 
@@ -20,10 +26,10 @@ const CURVE_AHEAD_CAMERA = 0.008
 const CURVE_AHEAD_XWING = 0.02;
 const XWING_MAX_ANGLE = 35;
 
-export const Experience = () => {
-    const { playGame, hasScroll,end} = usePlay();
 
 
+export const Experience = ({...scrollPercentage}) => {
+    const { playGame,end,} = usePlay();
 
     const curve = useMemo(()=>{
         return  new THREE.CatmullRomCurve3([
@@ -54,10 +60,11 @@ export const Experience = () => {
 
     const cameraGroup = useRef();
     const cameraRef = useRef()
-    const scroll = useScroll();
     const lastScroll = useRef(0)
     const { setHasScroll, setEnd}= usePlay();
     const cameraRail = useRef()
+    const prevScrollPercentageRef = useRef(0);
+    scrollPercentage = scrollPercentage.scrollPercentage
 
     useFrame((_state, delta) => {
         // console.log(cameraGroup.current.position.z)
@@ -70,18 +77,19 @@ export const Experience = () => {
             cameraRef.current.fov = 80;
         }
 
-        if(lastScroll.current <=0 &&scroll.offset > 0){
+        if(lastScroll.current <=0 && scrollPercentage.scrollPercentage > 0){
             setHasScroll(true);
         }
 
-        const scrollOffset = Math.max(0, scroll.offset-0.005);
+
+
+        const scrollOffset = Math.max(0, scrollPercentage.scrollPercentage-0.005);
+
 
         const curPoint = curve.getPoint(scrollOffset);
 
 
-        // Follow the curve points
         cameraGroup.current.position.lerp(curPoint, delta * 24);
-        // console.log(curPoint)
 
 
         // Make the group look ahead on the curve
@@ -144,6 +152,7 @@ export const Experience = () => {
         );
         xWing.current.quaternion.slerp(targetXwingQuaternion, delta * 2)
 
+
     });
     const xWingOutTl = useRef();
     const xWing = useRef()
@@ -181,39 +190,31 @@ export const Experience = () => {
         if (playGame) {
             xWingInTl.current.play();
         }
+
     }, [playGame]);
 
+    useEffect(()=>{
+        if(end){
+            xWingOutTl.current.play();
+        }
+    },[end])
 
 
-    useEffect(() => {
-        const listener = new THREE.AudioListener();
-        const sound = new THREE.Audio(listener);
-        const audioLoader = new THREE.AudioLoader();
-
-        audioLoader.load('./music/Galactic.mp3', function (buffer) {
-            sound.setBuffer(buffer);
-            sound.setLoop(true);
-            sound.setVolume(0.02);
-            if (hasScroll) {
-                sound.play();
-            }
-        });
-    }, [hasScroll]);
-
+    const shipRef = useRef()
 
 
     return useMemo(()=>(
         <>
             <group ref={cameraGroup}>
                 {/*<OrbitControls/>*/}
-                <Speed/>
+                <Speed />
                 <Background/>
                 <group ref={cameraRail}>
                     <PerspectiveCamera ref={cameraRef} position={[0,0,10]} fov={50} makeDefault={true}/>
                 </group>
                 <group ref={xWing}>
                     <Float floatIntensity={0.5} speed={1.5} rotationIntensity={0.1}>
-                        <Xwing rotation-y={Math.PI/-2} scale={1} position={[0,-1,0]}/>
+                        <Xwing  rotation-y={Math.PI/-2} scale={1} position={[0,-1,0]}/>
                     </Float>
 
                 </group>
@@ -235,6 +236,9 @@ export const Experience = () => {
                     <meshStandardMaterial  color={"red"}  transparent={1}  />
                 </mesh>
             </group>
+            <Float floatIntensity={0.1} speed={1} rotationIntensity={0.22}>
+                <SpaceShip scale={0.05} ref={shipRef} position={[150, 15, -10 * CURVE_DISTANCE]}/>
+            </Float>
             <Galaxy position={[-2, 0, -5 *CURVE_DISTANCE]} scale={CURVE_DISTANCE}/>
         </>
     ),[]
