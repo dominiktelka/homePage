@@ -4,11 +4,11 @@ import styles from "./BtnEnd.module.css";
 
 
 export const EndButton = () => {
-    const {end, setEnd} = usePlay();
+    const {setEnd} = usePlay();
 
     return (
         <section className={styles.buttonEndSection}>
-            <button  className={styles.bttnEnd} onClick={() =>{setEnd(true)}}>Klick for more details</button>
+            <button  className={styles.bttnEnd} onClick={() =>{setEnd(true)}}>Click for more details</button>
         </section>
     );
 };

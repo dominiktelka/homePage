@@ -4,8 +4,9 @@
     width: 30vw;
     height: auto;
     position: absolute;
-    left: 3svw;
-    top: 5svh;
+    left: 50%;
+    transform: translate(-50%);
+    top: 10svh;
     color: whitesmoke;
     background-color: rgba(17, 7, 7, 0.1);
     border-radius: 10px;

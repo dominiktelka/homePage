@@ -12,7 +12,7 @@ export default function Education({ currentSectionNumber }) {
     };
 
     useEffect(() => {
-        if (currentSectionNumber === 10 && playGame) {
+        if (currentSectionNumber === 12 && playGame) {
             setIsVisible(true);
         } else {
             setIsVisible(false);

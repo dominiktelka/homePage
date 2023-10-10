@@ -13,12 +13,17 @@ export default function Start({ scrollPercentage, currentSectionNumber }) {
 
     useEffect(() => {
         if (currentSectionNumber === 1 && playGame) {
-            setIsVisible(true);
+            // Ustaw opóźnienie na 2000 milisekund (2 sekundy) przed pojawieniem się sekcji
+                setIsVisible(true);
+
+        } else {
+            setIsVisible(false);
         }
-        else{
-            setIsVisible(false)
-        }
+
+        // Wyczyść timer po odmontowaniu komponentu lub gdy currentSectionNumber zmienia się
+
     }, [currentSectionNumber, playGame]);
+
 
 
 
@@ -51,15 +56,12 @@ export default function Start({ scrollPercentage, currentSectionNumber }) {
     )
 
     return (
-        isVisible && (
-            <div className={styles.popupSection}>
+        <div className={styles.popupSection} style={{ opacity: isVisible ? 1 : 0 , zIndex: isVisible ? 0 : -1, transition: isVisible ? "opacity 4s ease" : "none"}}>
                 <button className={styles.closeButton} onClick={closeSection}>
                     X
                 </button>
                 { window.innerWidth > window.innerHeight ? textBigWidth : textMobile }
-
-            </div>
-        )
+        </div>
     );
 }
 

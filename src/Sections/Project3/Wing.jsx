@@ -8,7 +8,7 @@ export default function Xwing({ currentSectionNumber }) {
     const [isMobile, setIsMobile] = useState(window.innerWidth > window.innerHeight);
 
     useEffect(() => {
-        if (currentSectionNumber === 12 && playGame) {
+        if (currentSectionNumber === 10 && playGame) {
             setIsVisible(true);
             setIsMobile(window.innerWidth > window.innerHeight);
         } else {
@@ -47,7 +47,7 @@ export default function Xwing({ currentSectionNumber }) {
                     </>
 
                 <div className={isMobile ? styles.projectImageWrapper : styles.projectImageWrapperMobile} onClick={isMobile ? openProjectPage : null}>
-                    <video className={styles.projectVideo} loop autoPlay={currentSectionNumber === 12 && playGame}>
+                    <video className={styles.projectVideo} loop autoPlay={currentSectionNumber === 10 && playGame}>
                         <source src="./video/xwing.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
