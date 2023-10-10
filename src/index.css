@@ -631,3 +631,9 @@ body {
     margin-top:15svh;
   }
 }
+@media (min-width: 1840px){
+  .outroText:first-child{
+    margin-top: -7svh;
+  }
+
+}
